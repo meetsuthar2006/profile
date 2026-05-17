@@ -6,27 +6,34 @@
     <title>Meet Suthar - Full Stack Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Matrix Rain Background -->
-    <div id="matrix-bg" class="matrix-background"></div>
-
-    <!-- Navigation Bar with Glass Effect -->
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <span class="code-bracket">&lt;</span>
-                <span class="logo-text">MeetSuthar</span>
-                <span class="code-bracket">/&gt;</span>
-                <span class="blink-cursor">_</span>
+                <span class="logo-letter">M</span>
+                <span class="logo-text">eet</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
-                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
-                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="theme-toggle">
+                <button class="toggle-btn" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -35,113 +42,86 @@
         </div>
     </nav>
 
-    <!-- Terminal Welcome Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="btn-close"></span>
-                            <span class="btn-min"></span>
-                            <span class="btn-max"></span>
-                        </div>
-                        <div class="terminal-title">meetsuthar@portfolio:~$ </div>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="command">$ whoami</div>
-                        <div class="output glow-text">Meet Suthar - Full Stack Developer</div>
-                        <div class="command">$ echo "Skills" </div>
-                        <div class="output glow-text">JavaScript | React | Node.js | Python | MongoDB</div>
-                        <div class="command">$ cat mission.txt</div>
-                        <div class="output glow-text">Building innovative web solutions one line of code at a time...</div>
-                        <div class="command">$ ./init-portfolio.sh</div>
-                        <span class="cursor"></span>
+                <div class="hero-text">
+                    <h1 class="hero-title" data-text="Meet Suthar">
+                        <span class="char" style="--i:0">M</span>
+                        <span class="char" style="--i:1">e</span>
+                        <span class="char" style="--i:2">e</span>
+                        <span class="char" style="--i:3">t</span>
+                        <span class="char" style="--i:4"></span>
+                        <span class="char" style="--i:5">S</span>
+                        <span class="char" style="--i:6">u</span>
+                        <span class="char" style="--i:7">t</span>
+                        <span class="char" style="--i:8">h</span>
+                        <span class="char" style="--i:9">a</span>
+                        <span class="char" style="--i:10">r</span>
+                    </h1>
+                    <p class="hero-subtitle">Full Stack Developer • Creative Technologist • Digital Innovator</p>
+                    <p class="hero-description">Crafting beautiful, functional digital experiences with modern web technologies. Let's build something extraordinary together.</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="floating-card card-1">
-                        <div class="card-icon"><i class="fas fa-code"></i></div>
-                        <p>Code</p>
-                    </div>
-                    <div class="floating-card card-2">
-                        <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
-                        <p>Innovate</p>
-                    </div>
-                    <div class="floating-card card-3">
-                        <div class="card-icon"><i class="fas fa-rocket"></i></div>
-                        <p>Deploy</p>
-                    </div>
-                    <div class="hologram">
-                        <img src="https://via.placeholder.com/250x250?text=Profile" alt="Profile">
+                    <div class="floating-element element-1"></div>
+                    <div class="floating-element element-2"></div>
+                    <div class="floating-element element-3"></div>
+                    <div class="profile-image">
+                        <img src="https://via.placeholder.com/400x400?text=Profile" alt="Profile">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Hexagon Design -->
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-title">
-                <span class="section-label">&lt; About Me /&gt;</span>
-                <h2>Who Am I?</h2>
-                <div class="title-line"></div>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Discover my journey and passion</p>
             </div>
-
             <div class="about-grid">
-                <div class="about-card glass-effect">
-                    <div class="card-number">01</div>
-                    <h3><i class="fas fa-user-circle"></i> Identity</h3>
-                    <p>I'm Meet Suthar, a passionate full-stack developer from India. I love transforming ideas into powerful, scalable web applications that make a real impact in the digital world.</p>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fas fa-user"></i></div>
+                    <h3>Who I Am</h3>
+                    <p>A passionate full-stack developer from India with a strong foundation in computer science. I transform ideas into elegant digital solutions that solve real-world problems.</p>
                 </div>
-
-                <div class="about-card glass-effect">
-                    <div class="card-number">02</div>
-                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <p><strong>B.Tech in Computer Science</strong> (Expected 2026)</p>
-                    <p>Specializing in Full-Stack Web Development with focus on modern web technologies and software engineering practices.</p>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Education</h3>
+                    <p><strong>B.Tech in Computer Science</strong> (Expected 2026). Specializing in full-stack web development with focus on modern technologies and best practices.</p>
                 </div>
-
-                <div class="about-card glass-effect">
-                    <div class="card-number">03</div>
-                    <h3><i class="fas fa-bullseye"></i> Mission</h3>
-                    <p>To build innovative digital solutions that solve real-world problems. Committed to continuous learning and mastering cutting-edge technologies.</p>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fas fa-heart"></i></div>
+                    <h3>My Passion</h3>
+                    <p>I'm driven by clean code, beautiful UI design, and creating seamless user experiences. I believe in continuous learning and pushing technological boundaries.</p>
                 </div>
-
-                <div class="about-card glass-effect">
-                    <div class="card-number">04</div>
-                    <h3><i class="fas fa-fire"></i> Passion</h3>
-                    <p>Obsessed with clean code, beautiful UI, and seamless user experiences. I believe great software comes from passion and dedication.</p>
-                </div>
-
-                <div class="about-card glass-effect">
-                    <div class="card-number">05</div>
-                    <h3><i class="fas fa-target"></i> Goals</h3>
-                    <p>Lead innovative tech teams, build world-class products, and contribute to open-source projects that change the industry.</p>
-                </div>
-
-                <div class="about-card glass-effect">
-                    <div class="card-number">06</div>
-                    <h3><i class="fas fa-star"></i> Expertise</h3>
-                    <p>Full-stack development, responsive design, API design, database architecture, and cloud deployment.</p>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Mission</h3>
+                    <p>To deliver innovative solutions that make a real impact. Building products that users love while maintaining code quality and scalability.</p>
                 </div>
             </div>
-
-            <div class="stats-section">
-                <div class="stat-box">
+            <div class="stats-container">
+                <div class="stat">
                     <div class="stat-number" data-target="15">0</div>
-                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-label">Projects</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat">
                     <div class="stat-number" data-target="2">0</div>
-                    <div class="stat-label">Years Experience</div>
+                    <div class="stat-label">Years</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat">
                     <div class="stat-number" data-target="50">0</div>
-                    <div class="stat-label">Happy Clients</div>
+                    <div class="stat-label">Clients</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat">
                     <div class="stat-number" data-target="100">0</div>
                     <div class="stat-label">% Dedication</div>
                 </div>
@@ -149,333 +129,241 @@
         </div>
     </section>
 
-    <!-- Skills Section with Animated Bars -->
+    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <div class="section-title">
-                <span class="section-label">&lt; Technical Stack /&gt;</span>
-                <h2>Skills & Technologies</h2>
-                <div class="title-line"></div>
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Technologies I work with</p>
             </div>
-
-            <div class="skills-container">
-                <!-- Frontend Skills -->
+            <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-paint-brush"></i> Frontend</h3>
-                    <div class="skills-list">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-list">
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span>HTML5/CSS3</span>
-                                <span class="skill-level">95%</span>
+                                <span>HTML5 & CSS3</span>
+                                <span class="skill-percent">95%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 95%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>JavaScript</span>
-                                <span class="skill-level">90%</span>
+                                <span class="skill-percent">90%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 90%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>React.js</span>
-                                <span class="skill-level">85%</span>
+                                <span class="skill-percent">85%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 85%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>UI/UX Design</span>
-                                <span class="skill-level">88%</span>
+                                <span class="skill-percent">88%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 88%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Backend Skills -->
                 <div class="skill-category">
                     <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skills-list">
+                    <div class="skill-list">
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>Node.js</span>
-                                <span class="skill-level">88%</span>
+                                <span class="skill-percent">88%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 88%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>Express.js</span>
-                                <span class="skill-level">85%</span>
+                                <span class="skill-percent">85%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 85%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>MongoDB</span>
-                                <span class="skill-level">82%</span>
+                                <span class="skill-percent">82%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 82%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>Python</span>
-                                <span class="skill-level">80%</span>
+                                <span class="skill-percent">80%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 80%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tools & Platforms -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-wrench"></i> Tools</h3>
-                    <div class="skills-list">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skill-list">
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>Git & GitHub</span>
-                                <span class="skill-level">92%</span>
+                                <span class="skill-percent">92%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 92%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>VS Code</span>
-                                <span class="skill-level">95%</span>
+                                <span class="skill-percent">95%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 95%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>Docker</span>
-                                <span class="skill-level">75%</span>
+                                <span class="skill-percent">75%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 75%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>REST APIs</span>
-                                <span class="skill-level">90%</span>
+                                <span class="skill-percent">90%</span>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 90%"></div>
-                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tech Stack Badges -->
-            <div class="tech-stack">
-                <h3>Technology Arsenal</h3>
-                <div class="tech-grid">
-                    <div class="tech-badge"><i class="fab fa-js"></i> JavaScript</div>
-                    <div class="tech-badge"><i class="fab fa-react"></i> React</div>
-                    <div class="tech-badge"><i class="fab fa-node-js"></i> Node.js</div>
-                    <div class="tech-badge"><i class="fas fa-leaf"></i> MongoDB</div>
-                    <div class="tech-badge"><i class="fab fa-python"></i> Python</div>
-                    <div class="tech-badge"><i class="fab fa-git"></i> Git</div>
-                    <div class="tech-badge"><i class="fab fa-docker"></i> Docker</div>
-                    <div class="tech-badge"><i class="fas fa-cloud"></i> Cloud Deploy</div>
-                </div>
+            <div class="tech-badges">
+                <div class="badge"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="badge"><i class="fab fa-react"></i> React</div>
+                <div class="badge"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="badge"><i class="fab fa-python"></i> Python</div>
+                <div class="badge"><i class="fab fa-git"></i> Git</div>
+                <div class="badge"><i class="fab fa-docker"></i> Docker</div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section with Neon Effects -->
+    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-title">
-                <span class="section-label">&lt; Portfolio /&gt;</span>
-                <h2>Featured Projects</h2>
-                <div class="title-line"></div>
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcase of my best work</p>
             </div>
-
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card neon-border">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
-                        <h3>E-Commerce Platform</h3>
-                    </div>
+                <div class="project-card" data-category="fullstack">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/350x250?text=E-Commerce" alt="E-Commerce">
-                    </div>
-                    <div class="project-body">
-                        <p>Full-stack e-commerce solution with product catalog, shopping cart, payment gateway integration, and admin dashboard.</p>
-                        <div class="project-stats">
-                            <span class="stat"><i class="fas fa-users"></i> 500+ Users</span>
-                            <span class="stat"><i class="fas fa-chart-line"></i> 2x Growth</span>
+                        <img src="https://via.placeholder.com/400x300?text=E-Commerce" alt="E-Commerce Platform">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-btn"><i class="fas fa-arrow-right"></i></a>
                         </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-stack e-commerce solution with product catalog, shopping cart, payment integration, and admin dashboard.</p>
                         <div class="project-tags">
                             <span class="tag">React</span>
                             <span class="tag">Node.js</span>
                             <span class="tag">MongoDB</span>
-                            <span class="tag">Stripe</span>
                         </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" class="project-link">Source Code <i class="fab fa-github"></i></a>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card neon-border">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-tasks"></i></div>
-                        <h3>Task Management App</h3>
-                    </div>
+                <div class="project-card" data-category="frontend">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/350x250?text=Task+Manager" alt="Task Manager">
-                    </div>
-                    <div class="project-body">
-                        <p>Collaborative task management system with real-time updates, team workspaces, and advanced project tracking features.</p>
-                        <div class="project-stats">
-                            <span class="stat"><i class="fas fa-tasks"></i> 1000+ Tasks</span>
-                            <span class="stat"><i class="fas fa-users-cog"></i> 50+ Teams</span>
+                        <img src="https://via.placeholder.com/400x300?text=Task+Manager" alt="Task Manager">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-btn"><i class="fas fa-arrow-right"></i></a>
                         </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>Collaborative task management with real-time updates, team workspaces, and advanced project tracking features.</p>
                         <div class="project-tags">
                             <span class="tag">React</span>
                             <span class="tag">Firebase</span>
                             <span class="tag">Real-time</span>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="#" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" class="project-link">Source Code <i class="fab fa-github"></i></a>
-                    </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card neon-border">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>Weather Dashboard</h3>
-                    </div>
+                <div class="project-card" data-category="frontend">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/350x250?text=Weather+App" alt="Weather">
-                    </div>
-                    <div class="project-body">
-                        <p>Real-time weather application with location-based forecasting, beautiful animations, and advanced data visualization.</p>
-                        <div class="project-stats">
-                            <span class="stat"><i class="fas fa-globe"></i> 100+ Cities</span>
-                            <span class="stat"><i class="fas fa-download"></i> 10K+ Downloads</span>
+                        <img src="https://via.placeholder.com/400x300?text=Weather+App" alt="Weather App">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-btn"><i class="fas fa-arrow-right"></i></a>
                         </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>Real-time weather application with location-based forecasting and beautiful data visualization.</p>
                         <div class="project-tags">
                             <span class="tag">JavaScript</span>
-                            <span class="tag">OpenWeather API</span>
+                            <span class="tag">API</span>
                             <span class="tag">D3.js</span>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="#" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" class="project-link">Source Code <i class="fab fa-github"></i></a>
-                    </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-card neon-border">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
-                        <h3>Analytics Dashboard</h3>
-                    </div>
+                <div class="project-card" data-category="fullstack">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/350x250?text=Analytics" alt="Analytics">
-                    </div>
-                    <div class="project-body">
-                        <p>Enterprise-grade analytics dashboard with real-time metrics, custom reports, and interactive data visualization.</p>
-                        <div class="project-stats">
-                            <span class="stat"><i class="fas fa-bar-chart"></i> 50+ Metrics</span>
-                            <span class="stat"><i class="fas fa-zap"></i> Real-time</span>
+                        <img src="https://via.placeholder.com/400x300?text=Analytics" alt="Analytics">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-btn"><i class="fas fa-arrow-right"></i></a>
                         </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Enterprise-grade analytics dashboard with real-time metrics, custom reports, and data visualization.</p>
                         <div class="project-tags">
                             <span class="tag">React</span>
                             <span class="tag">Chart.js</span>
                             <span class="tag">Redux</span>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="#" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" class="project-link">Source Code <i class="fab fa-github"></i></a>
-                    </div>
                 </div>
 
-                <!-- Project 5 -->
-                <div class="project-card neon-border">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-book"></i></div>
-                        <h3>Blog Platform</h3>
-                    </div>
+                <div class="project-card" data-category="backend">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/350x250?text=Blog" alt="Blog">
-                    </div>
-                    <div class="project-body">
-                        <p>Full-featured blogging platform with CRUD operations, user authentication, markdown support, and comment system.</p>
-                        <div class="project-stats">
-                            <span class="stat"><i class="fas fa-file-alt"></i> 500+ Articles</span>
-                            <span class="stat"><i class="fas fa-comments"></i> 2K+ Comments</span>
+                        <img src="https://via.placeholder.com/400x300?text=Blog" alt="Blog">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-btn"><i class="fas fa-arrow-right"></i></a>
                         </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Blog Platform</h3>
+                        <p>Full-featured blogging platform with authentication, markdown support, and comment system.</p>
                         <div class="project-tags">
                             <span class="tag">Express.js</span>
                             <span class="tag">MongoDB</span>
                             <span class="tag">JWT</span>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="#" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" class="project-link">Source Code <i class="fab fa-github"></i></a>
-                    </div>
                 </div>
 
-                <!-- Project 6 -->
-                <div class="project-card neon-border">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-gamepad"></i></div>
-                        <h3>Game Hub</h3>
-                    </div>
+                <div class="project-card" data-category="frontend">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/350x250?text=Games" alt="Games">
-                    </div>
-                    <div class="project-body">
-                        <p>Interactive gaming platform featuring multiple games, leaderboards, achievements, and multiplayer functionality.</p>
-                        <div class="project-stats">
-                            <span class="stat"><i class="fas fa-trophy"></i> 10 Games</span>
-                            <span class="stat"><i class="fas fa-users"></i> 5K+ Players</span>
+                        <img src="https://via.placeholder.com/400x300?text=Game+Hub" alt="Game Hub">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-btn"><i class="fas fa-arrow-right"></i></a>
                         </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Game Hub</h3>
+                        <p>Interactive gaming platform with multiple games, leaderboards, achievements, and multiplayer features.</p>
                         <div class="project-tags">
-                            <span class="tag">Canvas API</span>
+                            <span class="tag">Canvas</span>
                             <span class="tag">WebSocket</span>
                             <span class="tag">Node.js</span>
                         </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="#" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" class="project-link">Source Code <i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -485,48 +373,29 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-title">
-                <span class="section-label">&lt; Get In Touch /&gt;</span>
-                <h2>Let's Connect</h2>
-                <div class="title-line"></div>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's create something amazing together</p>
             </div>
-
             <div class="contact-wrapper">
-                <div class="contact-left">
-                    <div class="contact-card glass-effect">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
                         <h3>Email</h3>
-                        <p>meetsuthar2006@gmail.com</p>
-                        <a href="mailto:meetsuthar2006@gmail.com" class="contact-btn">Send Email</a>
+                        <p><a href="mailto:meetsuthar2006@gmail.com">meetsuthar2006@gmail.com</a></p>
                     </div>
-
-                    <div class="contact-card glass-effect">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
                         <h3>Phone</h3>
-                        <p>+91 XXXXX XXXXX</p>
-                        <a href="tel:+91" class="contact-btn">Call Me</a>
+                        <p><a href="tel:+91">+91 XXXXX XXXXX</a></p>
                     </div>
-
-                    <div class="contact-card glass-effect">
-                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h3>Location</h3>
                         <p>India</p>
-                        <a href="#" class="contact-btn">View Map</a>
-                    </div>
-
-                    <div class="social-section">
-                        <h3>Follow Me</h3>
-                        <div class="social-links">
-                            <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link" title="CodePen"><i class="fab fa-codepen"></i></a>
-                        </div>
                     </div>
                 </div>
-
-                <form class="contact-form glass-effect" id="contactForm">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" placeholder="Your Name" required>
@@ -543,11 +412,22 @@
                         <label>Message</label>
                         <textarea placeholder="Your message..." rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social">
+        <div class="container">
+            <h3>Follow Me</h3>
+            <div class="social-links">
+                <a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" title="CodePen"><i class="fab fa-codepen"></i></a>
             </div>
         </div>
     </section>
@@ -555,14 +435,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Meet Suthar. Built with <span class="neon-text">❤️</span> using Modern Web Technologies</p>
-                <div class="footer-stats">
-                    <span><i class="fas fa-code"></i> HTML5</span>
-                    <span><i class="fas fa-palette"></i> CSS3</span>
-                    <span><i class="fas fa-terminal"></i> JavaScript</span>
-                </div>
-            </div>
+            <p>&copy; 2026 Meet Suthar. Built with <span class="heart">❤️</span> using Modern Web Technologies</p>
         </div>
     </footer>
 
