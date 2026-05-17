@@ -8,20 +8,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lenis for Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/darkroomengineering/lenis@latest/bundled/lenis.js"></script>
 </head>
 <body>
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">MEET</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
+            <a href="#" class="nav-logo"><span class="logo-m">M</span>EET</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#work" class="nav-link">Work</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -31,76 +39,121 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">Full Stack Developer & Creative Technologist</h1>
-            <p class="hero-subtitle">Crafting digital experiences with elegance and precision</p>
-            <a href="#work" class="cta-button">View My Work</a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-splitting>Full Stack Developer & Creative Technologist</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Crafting beautiful, functional digital experiences with modern web technologies</p>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="300">I transform ideas into elegant solutions. Let's build something extraordinary together.</p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#work" class="cta-button primary-btn">View My Work</a>
+                        <a href="#contact" class="cta-button secondary-btn">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <div class="image-wrapper">
+                        <img src="https://via.placeholder.com/600x600?text=Profile" alt="Profile">
+                        <div class="image-blur"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="https://via.placeholder.com/600x600?text=Profile" alt="Profile">
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+            <span>Scroll to explore</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2 class="section-title">About Me</h2>
-                <p>I'm a passionate full-stack developer from India with expertise in building scalable, beautiful digital solutions. With a strong foundation in modern web technologies, I transform ideas into elegant, functional products.</p>
-                <p>My approach combines clean code, thoughtful design, and user-centric development. I believe in the power of technology to create meaningful experiences.</p>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>15+</h3>
-                        <p>Projects</p>
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title" data-splitting>About Me</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="about-intro">I'm a passionate full-stack developer from India with expertise in building scalable, beautiful digital solutions. With a strong foundation in modern web technologies, I transform ideas into elegant, functional products.</p>
+                    
+                    <p class="about-detail">My approach combines clean code, thoughtful design, and user-centric development. I believe in the power of technology to create meaningful experiences that solve real-world problems.</p>
+                    
+                    <p class="about-detail">When I'm not coding, I'm exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.</p>
+                </div>
+                
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">15</div>
+                        <div class="stat-label">Projects Completed</div>
                     </div>
-                    <div class="stat">
-                        <h3>2+</h3>
-                        <p>Years</p>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="2">2</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="stat">
-                        <h3>50+</h3>
-                        <p>Clients</p>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">50</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">100</div>
+                        <div class="stat-label">% Dedication</div>
                     </div>
                 </div>
-            </div>
-            <div class="about-image">
-                <img src="https://via.placeholder.com/500x600?text=About" alt="About">
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-group">
-                <h3>Frontend</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">UI/UX Design</span>
-                </div>
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title" data-splitting>Technical Skills</h2>
+                <div class="title-line"></div>
             </div>
-            <div class="skill-group">
-                <h3>Backend</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Express.js</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">REST APIs</span>
+            
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="0">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" data-aos="zoom-in">HTML5</span>
+                        <span class="skill-tag" data-aos="zoom-in">CSS3</span>
+                        <span class="skill-tag" data-aos="zoom-in">JavaScript</span>
+                        <span class="skill-tag" data-aos="zoom-in">React</span>
+                        <span class="skill-tag" data-aos="zoom-in">UI/UX</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-group">
-                <h3>Tools & Platforms</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Git & GitHub</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Figma</span>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" data-aos="zoom-in">Node.js</span>
+                        <span class="skill-tag" data-aos="zoom-in">Express.js</span>
+                        <span class="skill-tag" data-aos="zoom-in">MongoDB</span>
+                        <span class="skill-tag" data-aos="zoom-in">Python</span>
+                        <span class="skill-tag" data-aos="zoom-in">APIs</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & DevOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" data-aos="zoom-in">Git/GitHub</span>
+                        <span class="skill-tag" data-aos="zoom-in">Docker</span>
+                        <span class="skill-tag" data-aos="zoom-in">AWS</span>
+                        <span class="skill-tag" data-aos="zoom-in">VS Code</span>
+                        <span class="skill-tag" data-aos="zoom-in">Figma</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,137 +161,189 @@
 
     <!-- Work Section -->
     <section class="work" id="work">
-        <h2 class="section-title">Featured Work</h2>
-        <div class="work-grid">
-            <article class="work-item">
-                <div class="work-image">
-                    <img src="https://via.placeholder.com/500x350?text=E-Commerce" alt="E-Commerce Platform">
-                </div>
-                <div class="work-info">
-                    <h3>E-Commerce Platform</h3>
-                    <p>Full-stack e-commerce solution with product catalog, shopping cart, and payment integration.</p>
-                    <div class="work-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title" data-splitting>Featured Work</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="work-grid">
+                <article class="work-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="work-image">
+                        <img src="https://via.placeholder.com/500x350?text=E-Commerce" alt="E-Commerce Platform">
+                        <div class="work-overlay">
+                            <a href="#" class="work-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                    <div class="work-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-stack e-commerce solution with product catalog, shopping cart, and payment integration.</p>
+                        <div class="work-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="work-item">
-                <div class="work-image">
-                    <img src="https://via.placeholder.com/500x350?text=Task+Manager" alt="Task Management">
-                </div>
-                <div class="work-info">
-                    <h3>Task Management App</h3>
-                    <p>Collaborative task management system with real-time updates and team workspaces.</p>
-                    <div class="work-tags">
-                        <span>React</span>
-                        <span>Firebase</span>
-                        <span>Real-time</span>
+                <article class="work-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="work-image">
+                        <img src="https://via.placeholder.com/500x350?text=Task+Manager" alt="Task Management">
+                        <div class="work-overlay">
+                            <a href="#" class="work-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                    <div class="work-info">
+                        <h3>Task Management App</h3>
+                        <p>Collaborative task management system with real-time updates and team workspaces.</p>
+                        <div class="work-tags">
+                            <span>React</span>
+                            <span>Firebase</span>
+                            <span>Real-time</span>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="work-item">
-                <div class="work-image">
-                    <img src="https://via.placeholder.com/500x350?text=Weather+App" alt="Weather App">
-                </div>
-                <div class="work-info">
-                    <h3>Weather Dashboard</h3>
-                    <p>Real-time weather application with location-based forecasting and data visualization.</p>
-                    <div class="work-tags">
-                        <span>JavaScript</span>
-                        <span>API</span>
-                        <span>D3.js</span>
+                <article class="work-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-image">
+                        <img src="https://via.placeholder.com/500x350?text=Weather+App" alt="Weather App">
+                        <div class="work-overlay">
+                            <a href="#" class="work-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                    <div class="work-info">
+                        <h3>Weather Dashboard</h3>
+                        <p>Real-time weather application with location-based forecasting and data visualization.</p>
+                        <div class="work-tags">
+                            <span>JavaScript</span>
+                            <span>API</span>
+                            <span>D3.js</span>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="work-item">
-                <div class="work-image">
-                    <img src="https://via.placeholder.com/500x350?text=Analytics" alt="Analytics">
-                </div>
-                <div class="work-info">
-                    <h3>Analytics Dashboard</h3>
-                    <p>Enterprise-grade analytics dashboard with real-time metrics and custom reports.</p>
-                    <div class="work-tags">
-                        <span>React</span>
-                        <span>Chart.js</span>
-                        <span>Redux</span>
+                <article class="work-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="work-image">
+                        <img src="https://via.placeholder.com/500x350?text=Analytics" alt="Analytics">
+                        <div class="work-overlay">
+                            <a href="#" class="work-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                    <div class="work-info">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Enterprise-grade analytics dashboard with real-time metrics and custom reports.</p>
+                        <div class="work-tags">
+                            <span>React</span>
+                            <span>Chart.js</span>
+                            <span>Redux</span>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="work-item">
-                <div class="work-image">
-                    <img src="https://via.placeholder.com/500x350?text=Blog" alt="Blog">
-                </div>
-                <div class="work-info">
-                    <h3>Blog Platform</h3>
-                    <p>Full-featured blogging platform with authentication and markdown support.</p>
-                    <div class="work-tags">
-                        <span>Express.js</span>
-                        <span>MongoDB</span>
-                        <span>JWT</span>
+                <article class="work-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="work-image">
+                        <img src="https://via.placeholder.com/500x350?text=Blog" alt="Blog">
+                        <div class="work-overlay">
+                            <a href="#" class="work-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                    <div class="work-info">
+                        <h3>Blog Platform</h3>
+                        <p>Full-featured blogging platform with authentication and markdown support.</p>
+                        <div class="work-tags">
+                            <span>Express.js</span>
+                            <span>MongoDB</span>
+                            <span>JWT</span>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="work-item">
-                <div class="work-image">
-                    <img src="https://via.placeholder.com/500x350?text=Game+Hub" alt="Game Hub">
-                </div>
-                <div class="work-info">
-                    <h3>Interactive Game Hub</h3>
-                    <p>Gaming platform with multiple games, leaderboards, and multiplayer features.</p>
-                    <div class="work-tags">
-                        <span>Canvas</span>
-                        <span>WebSocket</span>
-                        <span>Node.js</span>
+                <article class="work-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-image">
+                        <img src="https://via.placeholder.com/500x350?text=Game+Hub" alt="Game Hub">
+                        <div class="work-overlay">
+                            <a href="#" class="work-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                    <div class="work-info">
+                        <h3>Interactive Game Hub</h3>
+                        <p>Gaming platform with multiple games, leaderboards, and multiplayer features.</p>
+                        <div class="work-tags">
+                            <span>Canvas</span>
+                            <span>WebSocket</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-content">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="contact-subtitle">Have a project in mind? Let's create something amazing together.</p>
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title" data-splitting>Let's Create Together</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Have a project in mind? Let's create something amazing together.</p>
+            </div>
             
             <div class="contact-wrapper">
-                <div class="contact-info">
+                <div class="contact-info" data-aos="fade-right">
                     <div class="info-item">
-                        <h3>Email</h3>
-                        <a href="mailto:meetsuthar2006@gmail.com">meetsuthar2006@gmail.com</a>
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <a href="mailto:meetsuthar2006@gmail.com">meetsuthar2006@gmail.com</a>
+                        </div>
                     </div>
+                    
                     <div class="info-item">
-                        <h3>Phone</h3>
-                        <a href="tel:+91">+91 XXXXX XXXXX</a>
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <a href="tel:+91">+91 XXXXX XXXXX</a>
+                        </div>
                     </div>
+                    
                     <div class="info-item">
-                        <h3>Location</h3>
-                        <p>India</p>
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>India</p>
+                        </div>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    
+                    <div class="social-links" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" data-aos="fade-left">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Your Name" required class="form-input">
+                        <span class="form-line"></span>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" placeholder="Your Email" required class="form-input">
+                        <span class="form-line"></span>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <input type="text" placeholder="Subject" required class="form-input">
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required class="form-input"></textarea>
+                        <span class="form-line"></span>
                     </div>
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
@@ -248,9 +353,16 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Meet Suthar. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Meet Suthar. Built with <span class="heart">❤️</span> using modern web technologies.</p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
