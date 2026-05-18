@@ -107,24 +107,72 @@ button { cursor: none; font-family: inherit; }
   flex-shrink: 0;
   min-width: 0;
 }
-.nav-logo a {
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0px;
-  color: var(--text);
-  white-space: nowrap;
+.nav-logo-link {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: gap 0.3s var(--ease);
+}
+.nav-logo-link:hover { gap: 1rem; }
+
+/* SVG mark */
+.logo-mark {
+  width: 36px; height: 36px;
+  flex-shrink: 0;
+  color: var(--accent);
+  position: relative;
+}
+.logo-svg {
+  width: 100%; height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 6px rgba(200,255,0,0));
+  transition: filter 0.4s;
+}
+.nav-logo-link:hover .logo-svg {
+  filter: drop-shadow(0 0 8px rgba(200,255,0,0.6));
+}
+/* Spinning outer ring */
+.logo-ring {
+  transform-origin: 20px 20px;
+  animation: logoSpin 12s linear infinite;
+}
+@keyframes logoSpin { to { transform: rotate(360deg); } }
+/* Center node pulse */
+.logo-center {
+  animation: logoPulse 2.5s ease-in-out infinite alternate;
+}
+@keyframes logoPulse {
+  from { r: 3.5; opacity: 0.8; }
+  to   { r: 4.5; opacity: 1; }
+}
+
+/* Wordmark */
+.logo-wordmark {
+  display: flex;
+  flex-direction: column;
   gap: 0;
+  line-height: 1;
 }
-.logo-bracket {
-  color: var(--accent);
+.logo-name {
+  font-family: var(--font-sans);
   font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
 }
-.logo-accent {
-  color: var(--accent);
+.logo-name-accent { color: var(--accent); }
+.logo-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1px;
 }
+.nav-logo-link:hover .logo-tagline { color: var(--accent); }
+/* keep old dot rule harmless */
 .nav-logo .dot { color: var(--accent); }
 
 .nav-links {
