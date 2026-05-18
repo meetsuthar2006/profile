@@ -372,7 +372,7 @@ const contactForm = document.getElementById('contactForm');
 const formSubmit  = document.getElementById('formSubmit');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     formSubmit.classList.add('sending');
     formSubmit.querySelector('.submit-text').textContent = 'Sending...';
     await new Promise(r => setTimeout(r, 1500));
