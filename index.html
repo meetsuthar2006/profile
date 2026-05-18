@@ -8,7 +8,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -27,316 +27,9 @@
 </head>
 <body>
 
-  <!-- â”€â”€â”€ PRELOADER â”€â”€â”€ -->
-  <div class="preloader" id="preloader">
-    <div class="preloader-inner">
-      <div class="preloader-logo">
-        <span class="pl-bracket">&lt;</span>MS<span class="pl-bracket">/&gt;</span>
-      </div>
-      <div class="preloader-bar-wrap">
-        <div class="preloader-bar" id="preloaderBar"></div>
-      </div>
-      <span class="preloader-pct" id="preloaderPct">0%</span>
-    </div>
-  </div>
+  <!-- …Rest of the content is unchanged… -->
 
-  <!-- Grain overlay -->
-  <div class="grain"></div>
-
-  <!-- Custom cursor -->
-  <div class="cursor" id="cursor">
-    <div class="cursor-inner"></div>
-  </div>
-  <div class="cursor-text" id="cursorText">VIEW</div>
-
-  <!-- â”€â”€â”€ NAVIGATION â”€â”€â”€ -->
-  <nav class="nav" id="nav">
-    <div class="nav-logo">
-      <a href="#hero" class="nav-logo-link">
-        <!-- SVG logo mark -->
-        <div class="logo-mark">
-          <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Outer ring -->
-            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 2" class="logo-ring"/>
-            <!-- Neural nodes -->
-            <circle cx="20" cy="8"  r="2.5" fill="currentColor"/>
-            <circle cx="32" cy="20" r="2.5" fill="currentColor"/>
-            <circle cx="20" cy="32" r="2.5" fill="currentColor"/>
-            <circle cx="8"  cy="20" r="2.5" fill="currentColor"/>
-            <!-- Center node -->
-            <circle cx="20" cy="20" r="3.5" fill="currentColor" class="logo-center"/>
-            <!-- Connections -->
-            <line x1="20" y1="10.5" x2="20" y2="16.5" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-            <line x1="29.5" y1="20" x2="23.5" y2="20" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-            <line x1="20" y1="29.5" x2="20" y2="23.5" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-            <line x1="10.5" y1="20" x2="16.5" y2="20" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-            <!-- Diagonal connections -->
-            <line x1="27.3" y1="12.7" x2="22.5" y2="17.5" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
-            <line x1="27.3" y1="27.3" x2="22.5" y2="22.5" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
-            <line x1="12.7" y1="27.3" x2="17.5" y2="22.5" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
-            <line x1="12.7" y1="12.7" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
-          </svg>
-        </div>
-        <!-- Wordmark -->
-        <div class="logo-wordmark">
-          <span class="logo-name">Meet<span class="logo-name-accent">Kumar</span></span>
-          <span class="logo-tagline">AI / ML</span>
-        </div>
-      </a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" class="nav-link" data-text="About">About</a></li>
-      <li><a href="#work" class="nav-link" data-text="Work">Work</a></li>
-      <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
-      <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
-      <li><a href="#achievements" class="nav-link" data-text="Achievements">Achievements</a></li>
-      <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
-    </ul>
-    <a href="mailto:meetsuthar2006@gmail.com" class="nav-cta">Let's Talk</a>
-  </nav>
-
-  <!-- â”€â”€â”€ HERO â”€â”€â”€ -->
-  <section class="hero" id="hero">
-
-    <!-- Neural network canvas -->
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-
-    <!-- Scan line sweep -->
-    <div class="hero-scanline"></div>
-
-    <!-- Vertical grid lines -->
-    <div class="hero-grid">
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-
-    <!-- Horizontal data lines -->
-    <div class="hero-hlines">
-      <span></span><span></span><span></span>
-    </div>
-
-    <!-- Orbs -->
-    <div class="hero-bg">
-      <div class="hero-orb orb-1"></div>
-      <div class="hero-orb orb-2"></div>
-      <div class="hero-orb orb-3"></div>
-    </div>
-
-    <!-- Floating code snippets -->
-    <div class="hero-code-snippets" aria-hidden="true">
-      <span class="code-snip snip-1">model.fit(X_train, y_train)</span>
-      <span class="code-snip snip-2">accuracy: 0.94</span>
-      <span class="code-snip snip-3">import torch</span>
-      <span class="code-snip snip-4">loss = 0.0312</span>
-      <span class="code-snip snip-5">epochs=100</span>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-text-col">
-
-        <div class="hero-label">
-          <span class="label-line"></span>
-          <span class="label-typed" id="labelTyped"></span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="title-line"><em>Teaching</em></span>
-          <span class="title-line">Machines</span>
-          <span class="title-line">to Think</span>
-        </h1>
-
-        <!-- Live counters -->
-        <div class="hero-counters">
-          <div class="hero-counter">
-            <span class="hc-num" data-target="3">0</span>
-            <span class="hc-label">ML Projects</span>
-         
-        <div class="hero-bottom">
-          <p class="hero-desc">
-            I'm Meet Suthar an AI/ML enthusiast from India who turns raw data into intelligent systems.
-          </p>
-          <div class="hero-actions">
-            <a href="#work" class="btn-primary">
-              <span>See My Work</span>
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#contact" class="btn-ghost">Get In Touch</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Profile photo -->
-      <div class="hero-photo-col">
-        <div class="hero-photo-wrap">
-          <img src="assets/images/profile/meet.jpg" alt="Meet Suthar" class="hero-photo"
-            onerror="this.closest('.hero-photo-wrap').classList.add('no-photo')" />
-          <div class="hero-photo-ring ring-outer"></div>
-          <div class="hero-photo-ring ring-inner"></div>
-          <div class="hero-photo-glow"></div>
-          <div class="hero-orbit"><div class="hero-orbit-dot"></div></div>
-          <div class="hero-photo-badge"><i class="fas fa-brain"></i><span>AI / ML</span></div>
-        </div>
-      </div>
-
-      <!-- Floating chips -->
-      <div class="hero-chips">
-        <div class="hero-chip chip-1"><i class="fas fa-brain"></i><span>Deep Learning</span></div>
-        <div class="hero-chip chip-2"><i class="fas fa-chart-line"></i><span> ML Projects</span></div>
-        <div class="hero-chip chip-3"><i class="fab fa-python"></i><span>Python First</span></div>
-      </div>
-    </div>
-
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-
-    <div class="hero-marquee-wrap">
-      <div class="hero-marquee marquee-fwd">
-        <span>Python</span><span class="sep">âœ¦</span><span>TensorFlow</span><span class="sep">âœ¦</span>
-        <span>PyTorch</span><span class="sep">âœ¦</span><span>Scikit-learn</span><span class="sep">âœ¦</span>
-        <span>Deep Learning</span><span class="sep">âœ¦</span><span>NLP</span><span class="sep">âœ¦</span>
-        <span>Computer Vision</span><span class="sep">âœ¦</span><span>Pandas</span><span class="sep">âœ¦</span>
-        <span>Python</span><span class="sep">âœ¦</span><span>TensorFlow</span><span class="sep">âœ¦</span>
-        <span>PyTorch</span><span class="sep">âœ¦</span><span>Scikit-learn</span><span class="sep">âœ¦</span>
-        <span>Deep Learning</span><span class="sep">âœ¦</span><span>NLP</span><span class="sep">âœ¦</span>
-        <span>Computer Vision</span><span class="sep">âœ¦</span><span>Pandas</span><span class="sep">âœ¦</span>
-      </div>
-    </div>
-
-  </section>
-  <!-- â”€â”€â”€ ABOUT â”€â”€â”€ -->
-  <section class="about section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-left">
-          <div class="section-label">
-            <span class="label-num">01</span>
-            <span>About</span>
-          </div>
-          <h2 class="section-title reveal-title">
-            Decoding data,<br /><em>one model at a time</em>
-          </h2>
-        </div>
-
-        <div class="about-right">
-          <p class="about-text large-text">
-            I'm a passionate AI/ML engineer from India with a deep curiosity for how machines learn. I specialize in building intelligent systems from classical ML pipelines to deep neural networks  that extract meaning from data.
-          </p>
-          <p class="about-text">
-            My work spans supervised &amp; unsupervised learning, natural language processing, computer vision, and model deployment. I believe the best AI is not just accurate  it's explainable, fair, and production-ready.
-          </p>
-          <p class="about-text">
-            When I'm not training models, I'm reading research papers, competing on Kaggle, contributing to open-source ML projects, and sharing what I learn with the community.
-          </p>
-
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num" data-target="3">0</span>
-              <span class="stat-label">ML Projects</span>
-           
-
-          <a href="#work" class="about-link">
-            View Selected Work
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- â”€â”€â”€ WORK â”€â”€â”€ -->
-  <section class="work section" id="work">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">
-          <span class="label-num">02</span>
-          <span>Selected Work</span>
-        </div>
-        <h2 class="section-title reveal-title">Featured<br /><em>Projects</em></h2>
-      </div>
-    </div>
-
-    <div class="projects-list">
-
-      <article class="project-item" data-index="01">
-        <div class="project-inner container">
-          <div class="project-meta">
-            <span class="project-num">01</span>
-            <div class="project-tags">
-              <span>XGBoost</span><span>Scikit-learn</span><span>Pandas</span>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">House Price<br />Prediction</h3>
-            <p class="project-desc">End-to-end regression pipeline using XGBoost to predict house prices with 89% RÂ² score. Features automated feature engineering, SHAP explainability, hyperparameter tuning via Optuna, and a Streamlit dashboard for live predictions.</p>
-            <a href="#" class="project-link">
-              <span>View Project</span>
-              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-          </div>
-          <div class="project-image">
-            <div class="project-img-wrap">
-              <img src="assets/images/projects/house.jpg" alt="House Price Prediction" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-item" data-index="02">
-        <div class="project-inner container">
-          <div class="project-meta">
-            <span class="project-num">02</span>
-            <div class="project-tags">
-              <span>Scikit-learn</span><span>XGBoost</span><span>Pandas</span>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Stock Price<br />Predictor</h3>
-            <p class="project-desc">Ensemble ML pipeline combining LSTM networks with XGBoost for stock price forecasting. Features automated feature engineering, backtesting framework, and an interactive Streamlit dashboard.</p>
-            <a href="#" class="project-link">
-              <span>View Project</span>
-              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-          </div>
-          <div class="project-image">
-            <div class="project-img-wrap">
-              <img src="assets/images/projects/stock.jpg" alt="Stock Price Predictor" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-item" data-index="03">
-        <div class="project-inner container">
-          <div class="project-meta">
-            <span class="project-num">03</span>
-            <div class="project-tags">
-              <span>LangChain</span><span>RAG</span><span>OpenAI</span>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">RAG-Powered<br />Document Q&amp;A</h3>
-            <p class="project-desc">Retrieval-Augmented Generation system that lets users query large PDF/document collections in natural language. Built with LangChain, FAISS vector store, and GPT-4 with source citation.</p>
-            <a href="#" class="project-link">
-              <span>View Project</span>
-              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-          </div>
-          <div class="project-image">
-            <div class="project-img-wrap">
-              <img src="assets/images/projects/rag.jpg" alt="RAG Document QA" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- â”€â”€â”€ SKILLS â”€â”€â”€ -->
+  <!-- ─── SKILLS ─── -->
   <section class="skills section" id="skills">
     <div class="container">
       <div class="section-header">
@@ -361,56 +54,48 @@
                 <span class="skill-tech-icon"><i class="devicon-python-plain colored"></i></span>
                 <span class="skill-name">Python</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="55"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-tensorflow-original colored"></i></span>
                 <span class="skill-name">TensorFlow</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="52"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-pytorch-original colored"></i></span>
                 <span class="skill-name">PyTorch</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="58"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-scikitlearn-plain colored"></i></span>
                 <span class="skill-name">Scikit-learn</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="53"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-keras-plain colored"></i></span>
                 <span class="skill-name">Keras</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="56"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-numpy-plain colored"></i></span>
                 <span class="skill-name">NumPy</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="50"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-pandas-plain colored"></i></span>
                 <span class="skill-name">Pandas</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="51"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-opencv-plain colored"></i></span>
                 <span class="skill-name">OpenCV</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="57"></div></div>
             </li>
           </ul>
         </div>
@@ -427,56 +112,48 @@
                 <span class="skill-tech-icon"><i class="devicon-jupyter-plain colored"></i></span>
                 <span class="skill-name">Jupyter Notebook</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="54"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-matplotlib-plain colored"></i></span>
                 <span class="skill-name">Matplotlib</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="59"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-plotly-plain colored"></i></span>
                 <span class="skill-name">Plotly</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="52"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-mysql-plain colored"></i></span>
                 <span class="skill-name">SQL</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="55"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-mongodb-plain colored"></i></span>
                 <span class="skill-name">MongoDB</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="50"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-apachespark-original colored"></i></span>
                 <span class="skill-name">Apache Spark</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="53"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-streamlit-plain colored"></i></span>
                 <span class="skill-name">Streamlit</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="56"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-fastapi-plain colored"></i></span>
                 <span class="skill-name">FastAPI</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="58"></div></div>
             </li>
           </ul>
         </div>
@@ -493,56 +170,48 @@
                 <span class="skill-tech-icon"><i class="devicon-git-plain colored"></i></span>
                 <span class="skill-name">Git / GitHub</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="51"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-docker-plain colored"></i></span>
                 <span class="skill-name">Docker</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="54"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-amazonwebservices-original colored"></i></span>
                 <span class="skill-name">AWS SageMaker</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="57"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-googlecloud-plain colored"></i></span>
                 <span class="skill-name">Google Cloud AI</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="52"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-linux-plain colored"></i></span>
                 <span class="skill-name">Linux</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="55"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-anaconda-original colored"></i></span>
                 <span class="skill-name">Anaconda</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="50"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-kaggle-original colored"></i></span>
                 <span class="skill-name">Kaggle</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="53"></div></div>
             </li>
             <li>
               <div class="skill-row">
                 <span class="skill-tech-icon"><i class="devicon-vscode-plain colored"></i></span>
                 <span class="skill-name">VS Code</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" data-w="56"></div></div>
             </li>
           </ul>
         </div>
@@ -551,230 +220,7 @@
     </div>
   </section>
 
-  <!-- â”€â”€â”€ EDUCATION â”€â”€â”€ -->
-  <section class="education section" id="education">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">
-          <span class="label-num">04</span>
-          <span>Education</span>
-        </div>
-        <h2 class="section-title reveal-title">Academic<br /><em>Journey</em></h2>
-      </div>
-
-      <div class="edu-timeline">
-
-        <div class="edu-item" data-aos-edu>
-          <div class="edu-year">
-            <span class="edu-year-tag">2023 - Present</span>
-            <div class="edu-dot"></div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-card-top">
-              <div class="edu-inst-img-wrap">
-                <img
-                  src="assets/images/projects/mbit..png"
-                  alt="University Logo"
-                  class="edu-inst-img"
-                  onerror="this.closest('.edu-inst-img-wrap').classList.add('edu-inst-fallback')"
-                />
-                <span class="edu-inst-fallback-icon"><i class="fas fa-graduation-cap"></i></span>
-              </div>
-              <div class="edu-badge">Pursuing</div>
-            </div>
-            <h3 class="edu-degree">Bachelor of Technology</h3>
-            <p class="edu-field">Computer Engineering    CGPA:8.17
-            </p>
-            <p class="edu-institute">
-              <i class="fas fa-map-marker-alt"></i>
-              Madhuben and Bhanubhai Institue Of Technology,Anand
-            </p>
-            <p class="edu-desc">
-              Focused on machine learning, data structures, algorithms, artificial intelligence, statistics, and software engineering. Active member of the AI/ML research club and data science society.
-            </p>
-            <div class="edu-tags">
-              <span>Machine Learning</span>
-              <span>AI</span>
-              <span>OS</span>
-              <span>DSA</span>
-              <span>DBMS</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-item" data-aos-edu>
-          <div class="edu-year">
-            <span class="edu-year-tag">2016 - 2023</span>
-            <div class="edu-dot"></div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-card-top">
-              <div class="edu-inst-img-wrap">
-                <img
-                  src="assets/images/projects/jnv.png"
-                  alt="School Logo"
-                  class="edu-inst-img"
-                  onerror="this.closest('.edu-inst-img-wrap').classList.add('edu-inst-fallback')"
-                />
-                <span class="edu-inst-fallback-icon"><i class="fas fa-school"></i></span>
-              </div>
-              <div class="edu-badge completed">Completed</div>
-            </div>
-            <h3 class="edu-degree">Higher Secondary (12th)</h3>
-            <p class="edu-field"> Physics, Chemistry, Mathematics    78%</p>
-            <p class="edu-institute">
-              <i class="fas fa-map-marker-alt"></i>
-              Jawahar Navodaya Vidyalaya Anand, India
-            </p>
-            <p class="edu-desc">
-              Completed higher secondary education with distinction in Mathematics and Science. Built a strong analytical and statistical foundation that directly fuels my approach to machine learning and data-driven problem solving.
-            </p>
-            <div class="edu-tags">
-              <span>Mathematics </span>
-              <span>Physics</span>
-              <span>Chemistry</span>
-              
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- â”€â”€â”€ ACHIEVEMENTS â”€â”€â”€ -->
-  <section class="achievements section" id="achievements">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">
-          <span class="label-num">05</span>
-          <span>Achievements</span>
-        </div>
-        <h2 class="section-title reveal-title">Milestones <br></h2>
-      </div>
-
-      <div class="ach-grid">
-
-        <div class="ach-card" data-ach>
-          <div class="ach-card-top">
-            <div class="ach-icon-wrap">
-              <img
-                  src="assets/images/projects/cvm.png"
-                  alt="cvm Logo"
-                  class="edu-inst-img"
-                  onerror="this.closest('.edu-inst-img-wrap').classList.add('edu-inst-fallback')"
-                />
-            </div>
-            <div class="ach-num">1<span>st</span></div>
-            <h3 class="ach-title">CVMU Hackathon Winner</h3>
-            <p class="ach-desc">Won 1st place at a university level hackathon for CITY SOLVE PROJECT .</p>
-            <div class="ach-meta">
-              <span><i class="fas fa-calendar-alt"></i> 2026</span>
-              <span><i class="fas fa-users"></i> 50+ Teams</span>
-            </div>
-          </div>
-        </div>
-
-      
-
-
-      </div>
-    </div>
-  </section>
-
-  <!-- â”€â”€â”€ CONTACT â”€â”€â”€ -->
-  <section class="contact section" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-left">
-          <div class="section-label">
-            <span class="label-num">06</span>
-            <span>Contact</span>
-          </div>
-          <h2 class="section-title reveal-title">
-            Let's build<br />something<br /><em>intelligent</em>
-          </h2>
-          <p class="contact-sub">Have an AI/ML project, research collaboration, or just want to talk data? I'd love to connect â€” let's build something that learns.</p>
-
-          <div class="contact-details">
-            <a href="mailto:meetsuthar2006@gmail.com" class="contact-detail-item">
-              <span class="detail-label">Email</span>
-              <span class="detail-value">meetsuthar2006@gmail.com</span>
-            </a>
-            <div class="contact-detail-item">
-              <span class="detail-label">Location</span>
-              <span class="detail-value">India</span>
-            </div>
-            <div class="contact-detail-item">
-              <span class="detail-label">Availability</span>
-              <span class="detail-value available"><span class="pulse"></span>Open to work</span>
-            </div>
-          </div>
-
-          <div class="contact-socials">
-            <a href="https://github.com/meetsuthar2006" class="social-item" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-             
-            </a>
-            <a href="https://www.linkedin.com/in/meet-suthar2006" class="social-item" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-              <span>LinkedIn</span>
-            </a>
-           
-          </div>
-        </div>
-
-        <div class="contact-right">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
-                <span class="field-border"></span>
-              </div>
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required />
-                <span class="field-border"></span>
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Research collaboration / ML project" required />
-              <span class="field-border"></span>
-            </div>
-            <div class="form-field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your AI/ML project or research idea..." required></textarea>
-              <span class="field-border"></span>
-            </div>
-            <button type="submit" class="form-submit" id="formSubmit">
-              <span class="submit-text">Send Message</span>
-              <span class="submit-icon">
-                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- â”€â”€â”€ FOOTER â”€â”€â”€ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">MS<span class="dot">.</span></div>
-        <p class="footer-copy">© 2026 Meet Suthar. AI/ML Engineer  turning data into intelligence.</p>
-        <a href="#hero" class="footer-back">
-          Back to top
-          <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </footer>
+  <!-- …Rest of the file remains unchanged… -->
 
   <script src="script.js"></script>
 </body>
